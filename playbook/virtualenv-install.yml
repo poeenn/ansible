@@ -33,7 +33,46 @@
    - python36u-libs
    - python36u-pip
 
-     
+- name: Symbolic link create
+  file:
+    src: /usr/bin/python3.6
+    dest: /usr/bin/python3
+    state: link
+
+- pip: name={{ item }}
+  with_items:
+  - pip_pkg
+  - setuptools
+  - virtualenv
+  ignore_errors: yes
+
+
+- blockinfile:
+  dest: /root/.bash_rc
+  content: |
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  notify: source bash_profile
+
+
+###############
+
+cd 
+virtualenv ansible3
+ ディレクトリ名は変数
+cd ansible3
+ ディレクトリ名は変数
+source ./bin/activate
+ shellモジュール
+pip install ansible
+ pipモジュール
+ansible --version|grep python
+deactivate
+ shellモジュール
+
+###############
 
 
 
+- set_fact: ansible_python_interpreter=/root/.pyenv/shims/python
