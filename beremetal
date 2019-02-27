@@ -1,0 +1,8 @@
+[bere]
+150.95.180.193
+150.95.180.159
+
+[all:vars]
+stage=beremetal
+
+
