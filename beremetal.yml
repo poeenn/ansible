@@ -1,0 +1,6 @@
+---
+- name: install virtualenv-ansible
+  hosts: all
+  roles:
+    - common
+

@@ -1,7 +1,4 @@
 ---
-hosts: all
-  vars_files:
-  - vars/{{ stage }}.yml
-
-
+- hosts: all
+  include: "./{{ stage }}.yml"
 
