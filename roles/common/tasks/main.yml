@@ -58,13 +58,13 @@
     state: latest
 
 
-- name: change bashrc
-  blockinfile:
-    dest: /root/.bashrc
-    block: |
-      export PYENV_ROOT="$HOME/.pyenv"
-      export PATH="$PYENV_ROOT/bin:$PATH"
-      eval "$(pyenv init -)"
+#- name: change bashrc
+#  blockinfile:
+#    dest: /root/.bashrc
+#    block: |
+#      export PYENV_ROOT="$HOME/.pyenv"
+#      export PATH="$PYENV_ROOT/bin:$PATH"
+#      eval "$(pyenv init -)"
 
 - shell: bash -lc "source ~/.bashrc"
 
