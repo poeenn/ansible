@@ -3,7 +3,7 @@
   yum: name=https://centos7.iuscommunity.org/ius-release.rpm
 
 - name: install pyenv-virtualenv
-  yum: name={{ item }} state=present 
+  yum: name={{ item }} state=present
   with_items:
     - zlib
     - tk-devel
@@ -50,9 +50,9 @@
 #    state: latest
 
 
-- name: install virtualenv 
+- name: install virtualenv
   pip:
-    name:  
+    name:
       - setuptools
       - virtualenv
     state: latest
@@ -69,9 +69,6 @@
 #- shell: bash -lc "source ~/.bashrc"
 
 
-- shell: bash -lc "virtualenv ansible"
-
-
 # - shell: bash -lc "source ./bin/activate"
 #  args:
 #    chdir: ~/ansible/
@@ -83,9 +80,5 @@
     virtualenv: ~/ansible/
     virtualenv_python: python3.6
     state: latest
-  args:
-    chdir: ~/ansible
 
 # - shell: bash -lc "deactivate"
-
-
